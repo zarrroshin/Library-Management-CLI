@@ -1,3 +1,8 @@
+from model import Book
+
+book1 = Book.Book("harry","ali")
+book1.save_json()
+
 # implementing a simple CLI 
 
 print("""choose one: 
