@@ -1,5 +1,6 @@
 from view.menu_view import MenuView
 from model.Book import Book
+from model.Member import Member
 from model.StorageManager import StorageManager
 
 class LibraryController:
@@ -35,9 +36,14 @@ class LibraryController:
          
       except:
          self.MenuView.search_error(data)
+
+
    
    def add_member(self):
-      pass
+      data = self.MenuView.add_member()
+      member = Member(data["name"],data["email"])
+      self.Storage.save_book(member,'data/members.json')
+
    
    def show_books(self):
       pass

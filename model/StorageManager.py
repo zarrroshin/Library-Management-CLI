@@ -1,14 +1,17 @@
 import json 
 from model.Book import Book
+from model.Member import Member
 class StorageManager:
-    def save_book(self,book:Book,filepath ='data/books.json' ):
+
+
+    def save(self,obj,filepath ='data/books.json' ):
         try : 
             with open(filepath,'r') as f : 
                 data = json.load(f)
         except(FileNotFoundError,json.JSONDecodeError):
             data = []
         
-        data.append(book.__dict__)
+        data.append(obj.__dict__)
 
         with open(filepath,'w') as f : 
             json.dump(data,f,indent=2)
@@ -38,4 +41,6 @@ class StorageManager:
                 return obj
          
         raise Exception
+    
+
         

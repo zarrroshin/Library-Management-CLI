@@ -26,4 +26,10 @@ class MenuView:
 
         else:
             print(f"title: {book["title"]},is_borrowed: {book["is_borrowed"]},author: {book["author"]}")
+
+    
+    def add_member(self):
+        name = input("Enter member name: ")
+        email = input("Enter member email: ")
+        return {"name":name,"email":email}
         
