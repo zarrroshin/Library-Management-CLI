@@ -1,8 +1,7 @@
 import json 
 from model.Book import Book
 class StorageManager:
-    @staticmethod
-    def save_book(book:Book,filepath ='data/books.json' ):
+    def save_book(self,book:Book,filepath ='data/books.json' ):
         try : 
             with open(filepath,'r') as f : 
                 data = json.load(f)
@@ -28,3 +27,15 @@ class StorageManager:
                 json.dump(data,f,indent=2)
         else : 
             raise Exception
+        
+
+    def search_book(self,title,filepath='data/books.json'):
+        with open(filepath,'r') as f :
+            data = json.load(f)
+        for obj in data: 
+            if obj["title"] == title :
+                found = True
+                return obj
+         
+        raise Exception
+        

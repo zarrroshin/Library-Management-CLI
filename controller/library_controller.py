@@ -24,10 +24,17 @@ class LibraryController:
         try:
            self.Storage.remove_book(data)
         except:
-           self.MenuView.show_error()
+           self.MenuView.remove_error()
+   
    
    def search_book(self):
-      pass
+      data = self.MenuView.search_book()
+      try:
+         book = self.Storage.search_book(data)
+         self.MenuView.show_book(book)
+         
+      except:
+         self.MenuView.search_error(data)
    
    def add_member(self):
       pass
