@@ -20,7 +20,11 @@ class LibraryController:
       
    
    def remove_book(self):
-      pass
+        data = self.MenuView.remove_book()
+        try:
+           self.Storage.remove_book(data)
+        except:
+           self.MenuView.show_error()
    
    def search_book(self):
       pass

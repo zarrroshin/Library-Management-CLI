@@ -17,3 +17,5 @@ class Book:
         
         self.is_borrowed = False
         self.member_id = None
+    
+    

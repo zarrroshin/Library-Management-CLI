@@ -13,3 +13,18 @@ class StorageManager:
 
         with open(filepath,'w') as f : 
             json.dump(data,f,indent=2)
+
+        
+    def remove_book(self,title,filepath ='data/books.json'):
+        with open(filepath,'r') as f :
+            data = json.load(f)
+        deleted = False
+        for obj in data: 
+            if obj["title"] == title :
+                data.remove(obj)
+                deleted = True
+        if(deleted):
+            with open(filepath,'w') as f : 
+                json.dump(data,f,indent=2)
+        else : 
+            raise Exception
