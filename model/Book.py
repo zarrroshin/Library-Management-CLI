@@ -1,4 +1,3 @@
-import json
 class Book:
     def __init__(self,title,author):
         self.title = title
@@ -18,8 +17,3 @@ class Book:
         
         self.is_borrowed = False
         self.member_id = None
-
- 
-    
-
-    
