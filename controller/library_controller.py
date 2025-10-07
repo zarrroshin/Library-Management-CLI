@@ -15,7 +15,7 @@ class LibraryController:
    def add_book(self):
       data = self.MenuView.add_book()
       book = Book(data['title'],data['author'])
-      self.Storage.save_book(book)
+      self.Storage.save(book)
 
       
       
@@ -42,7 +42,7 @@ class LibraryController:
    def add_member(self):
       data = self.MenuView.add_member()
       member = Member(data["name"],data["email"])
-      self.Storage.save_book(member,'data/members.json')
+      self.Storage.save(member,'data/members.json')
 
    
    def show_books(self):

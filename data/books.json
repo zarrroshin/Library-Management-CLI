@@ -1,13 +1,25 @@
 [
   {
-    "title": "new",
-    "author": "ali",
+    "title": "The art of thinking clearly",
+    "author": "Rolf Dobelli",
     "is_borrowed": false,
     "member_id": null
   },
   {
-    "title": "harru",
-    "author": "hfh",
+    "title": "The power of now",
+    "author": "Eckhart Tolle",
+    "is_borrowed": false,
+    "member_id": null
+  },
+  {
+    "title": "The compound Effect",
+    "author": "Darren Hardy",
+    "is_borrowed": false,
+    "member_id": null
+  },
+  {
+    "title": "Thirteen reasons why",
+    "author": "Jay Asher",
     "is_borrowed": false,
     "member_id": null
   }

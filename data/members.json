@@ -1,14 +1,7 @@
 [
   {
-    "name": "zarr",
-    "email": "zarr",
-    "borrowed_books": [],
-    "id": 1000
-  },
-  {
-    "name": "farr",
-    "email": "farr",
-    "borrowed_books": [],
-    "id": 1000
+    "name": "Mahdi",
+    "email": "mahdi54@gmail.com",
+    "borrowed_books": []
   }
 ]
