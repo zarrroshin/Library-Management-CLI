@@ -19,17 +19,7 @@ class Book:
         self.is_borrowed = False
         self.member_id = None
 
-    def save_json(self):
-        try : 
-            with open('data/books.json','r') as f : 
-                data = json.load(f)
-        except(FileNotFoundError,json.JSONDecodeError):
-            data = []
-        
-        data.append(self.__dict__)
-
-        with open('data/books.json','w') as f : 
-            json.dump(data,f,indent=2)
+ 
     
 
     
