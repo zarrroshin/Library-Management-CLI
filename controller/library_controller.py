@@ -46,10 +46,12 @@ class LibraryController:
 
    
    def show_books(self):
-      pass
+      data = self.Storage.load_books()
+      self.MenuView.show_books(data)
    
    def borrow_book(self):
-      pass
+      title = self.MenuView.ask_for_title()
+      
    
    def return_book(self):
       pass

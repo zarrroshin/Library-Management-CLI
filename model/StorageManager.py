@@ -3,6 +3,13 @@ from model.Book import Book
 from model.Member import Member
 class StorageManager:
 
+    def load_books(self,filepath ='data/books.json' ):
+        try : 
+            with open(filepath,'r') as f : 
+                data = json.load(f)
+        except(FileNotFoundError,json.JSONDecodeError):
+            data = []
+        return data
 
     def save(self,obj,filepath ='data/books.json' ):
         try : 

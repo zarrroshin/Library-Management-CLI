@@ -1,4 +1,6 @@
 class MenuView:
+
+    
     def add_book(self):
         title = input("Enter name of book: ")
         author = input("Enter author of book: ")
@@ -32,4 +34,9 @@ class MenuView:
         name = input("Enter member name: ")
         email = input("Enter member email: ")
         return {"name":name,"email":email}
+    
+
+    def show_books(self,data):
+        for book in data:
+            self.show_book(book)
         
