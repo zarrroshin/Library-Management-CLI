@@ -1,11 +1,19 @@
 import json
 class Book:
     def __init__(self,title,author):
-        self.title = title
-        self.author = author 
-        self.is_borrowed = False
-        self.member_id = None
-        self.id = self.get_next_id()
+        self.__title = title
+        self.__author = author 
+        self.__is_borrowed = False
+        self.__member_id = None
+        self.__id = self.get_next_id()
+    
+    @property
+    def title(self):
+        return self.__title
+    
+    @property
+    def is_borrowed(self):
+        return self.__is_borrowed
 
     def borrow(self,member_id):
         if(self.is_borrowed):
@@ -36,7 +44,7 @@ class Book:
         new_id = last_id + 1
         data["last_member_id"] = new_id
 
-        # به‌روزرسانی فایل
+     
         with open(tracker_path, "w") as f:
             json.dump(data, f, indent=2)
 

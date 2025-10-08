@@ -24,11 +24,9 @@ class Member:
             last_id = 1000
         
 
-        # افزایش ID
         new_id = last_id + 1
         data["last_book_id"] = new_id
 
-        # به‌روزرسانی فایل
         with open(tracker_path, "w") as f:
             json.dump(data, f, indent=2)
 

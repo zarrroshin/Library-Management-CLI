@@ -57,13 +57,13 @@ class LibraryController:
          member = self.Storage.search_member(id)
          try : 
             book = self.Storage.search_book(data["title"])
-            try:
+            if not book["is_borrowed"]:
                book["is_borrowed"] = True
                book["member_id"] = id
                self.Storage.update_book(book)
                member["borrowed_books"].append(data["title"])
                self.Storage.update_member(member)
-            except:
+            else:
                print("this book is already borrowed ")
          except: 
             print("this book doesn't exist")
@@ -72,4 +72,22 @@ class LibraryController:
       
    
    def return_book(self):
-      pass
+      data = self.MenuView.borrow_book()
+      try:
+         id =int(data["id"])
+         member = self.Storage.search_member(id)
+         try : 
+            book = self.Storage.search_book(data["title"])
+            if book["member_id"] == id : 
+               book["member_id"] = None
+               book["is_borrowed"] = False
+               self.Storage.update_book(book)
+               member["borrowed_books"].remove(data["title"])
+               self.Storage.update_member(member)
+            else:
+               print("this book was not borrowed by this id")      
+         except: 
+            print("this book doesn't exist")
+      except:
+         print("you are not a member please sign up")
+      
