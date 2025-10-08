@@ -44,23 +44,41 @@ class StorageManager:
             data = json.load(f)
         for obj in data: 
             if obj["title"] == title :
-                found = True
                 return obj
          
         raise Exception
     
 
-    def search_member(self,name,filepath='data/members.json'):
+    def search_member(self,id,filepath='data/members.json'):
         with open(filepath,'r') as f :
             data = json.load(f)
         for obj in data: 
-            if obj["name"] == name :
-                found = True
+            if obj["id"] == id :
                 return obj
          
         raise Exception
     
 
     
+    def update_book(self, book):
+            data = self.load_books()
 
+            for i, b in enumerate(data):
+                if b['title'] == book["title"]:
+                    data[i] = book
+                    break
+            
+            with open("data/books.json","w") as f : 
+                json.dump(data,f,indent=2)
+
+
+    def update_member(self, member):
+        data = self.load_books("data/members.json")
+
+        for i, b in enumerate(data):
+            if b['id'] == member["id"]:
+                data[i] = member
+                break
         
+        with open("data/members.json","w") as f : 
+            json.dump(data,f,indent=2)

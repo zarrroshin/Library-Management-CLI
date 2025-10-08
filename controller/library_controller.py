@@ -42,6 +42,7 @@ class LibraryController:
    def add_member(self):
       data = self.MenuView.add_member()
       member = Member(data["name"],data["email"])
+      self.MenuView.show_id(member)
       self.Storage.save(member,'data/members.json')
 
    
@@ -49,18 +50,25 @@ class LibraryController:
       data = self.Storage.load_books()
       self.MenuView.show_books(data)
    
-   # def borrow_book(self):
-   #    data = self.MenuView.borrow_book()
-   #    try:
-   #       member = self.Storage.search_member(data["name"])
-   #       try : 
-   #          book = self.Storage.search_book(title)
-   #          try:
-   #             book.borrow()
-   #       except: 
-   #          print("this book doesn't exist")
-   #    except:
-   #       print("you are not a member please sign up")
+   def borrow_book(self):
+      data = self.MenuView.borrow_book()
+      try:
+         id =int(data["id"])
+         member = self.Storage.search_member(id)
+         try : 
+            book = self.Storage.search_book(data["title"])
+            try:
+               book["is_borrowed"] = True
+               book["member_id"] = id
+               self.Storage.update_book(book)
+               member["borrowed_books"].append(data["title"])
+               self.Storage.update_member(member)
+            except:
+               print("this book is already borrowed ")
+         except: 
+            print("this book doesn't exist")
+      except:
+         print("you are not a member please sign up")
       
    
    def return_book(self):

@@ -1,13 +1,17 @@
 import json
 class Member:
     def __init__(self,name,email):
-        self.name= name
-        self.email = email
-        self.borrowed_books = []
-        self.id = self.get_next_id()
+        self.__name= name
+        self.__email = email
+        self.__borrowed_books = []
+        self.__id = self.get_next_id()
     
     def borrow_book(self,book):
-        pass
+        self.__borrowed_books.append(book)
+
+    @property
+    def id(self):
+        return self.__id
 
     @staticmethod
     def get_next_id():

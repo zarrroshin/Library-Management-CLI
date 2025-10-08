@@ -39,4 +39,10 @@ class MenuView:
     def show_books(self,data):
         for book in data:
             self.show_book(book)
-        
+    
+    def borrow_book(self):
+        title = input("enter title of book you want to borrow: ")
+        id = input ("what is your member id : ")
+        return {"title": title,"id":id}
+
+    

@@ -2,36 +2,36 @@
   {
     "title": "The art of thinking clearly",
     "author": "Rolf Dobelli",
-    "is_borrowed": false,
-    "member_id": null,
+    "is_borrowed": true,
+    "member_id": 205,
     "id": 1000
   },
   {
     "title": "The power of now",
     "author": "Eckhart Tolle",
-    "is_borrowed": false,
-    "member_id": null,
+    "is_borrowed": true,
+    "member_id": 205,
     "id": 1001
   },
   {
     "title": "The compound Effect",
     "author": "Darren Hardy",
-    "is_borrowed": false,
-    "member_id": null,
-    "id": 1002
+    "is_borrowed": true,
+    "member_id": 206,
+    "id": 1006
   },
   {
     "title": "Thirteen reasons why",
     "author": "Jay Asher",
-    "is_borrowed": false,
-    "member_id": null,
-    "id": 1003
+    "is_borrowed": true,
+    "member_id": 205,
+    "id": 1005
   },
   {
     "title": "Deep Work",
     "author": "Cal Newport",
-    "is_borrowed": false,
-    "member_id": null,
-    "id": 1004
+    "is_borrowed": true,
+    "member_id": 205,
+    "id": 1008
   }
 ]
