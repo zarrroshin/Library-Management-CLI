@@ -19,13 +19,13 @@ class Member:
         try:
             with open(tracker_path, "r") as f:
                 data = json.load(f)
-                last_id = data.get("last_book_id", 1000)
+                last_id = data.get("last_member_id", 1000)
         except json.JSONDecodeError:
             last_id = 1000
         
 
         new_id = last_id + 1
-        data["last_book_id"] = new_id
+        data["last_member_id"] = new_id
 
         with open(tracker_path, "w") as f:
             json.dump(data, f, indent=2)

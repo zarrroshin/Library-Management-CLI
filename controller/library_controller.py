@@ -1,7 +1,7 @@
 from view.menu_view import MenuView
-from model.Book import Book
-from model.Member import Member
-from model.StorageManager import StorageManager
+from model.book import Book
+from model.member import Member
+from model.storage_manager import StorageManager
 
 class LibraryController:
    
@@ -47,7 +47,7 @@ class LibraryController:
 
    
    def show_books(self):
-      data = self.Storage.load_books()
+      data = self.Storage.load()
       self.MenuView.show_books(data)
    
    def borrow_book(self):

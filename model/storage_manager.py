@@ -1,9 +1,9 @@
 import json 
-from model.Book import Book
-from model.Member import Member
+from model.book import Book
+from model.member import Member
 class StorageManager:
 
-    def load_books(self,filepath ='data/books.json' ):
+    def load(self,filepath ='data/books.json' ):
         try : 
             with open(filepath,'r') as f : 
                 data = json.load(f)
@@ -61,7 +61,7 @@ class StorageManager:
 
     
     def update_book(self, book):
-            data = self.load_books()
+            data = self.load()
 
             for i, b in enumerate(data):
                 if b['title'] == book["title"]:
@@ -73,7 +73,7 @@ class StorageManager:
 
 
     def update_member(self, member):
-        data = self.load_books("data/members.json")
+        data = self.load("data/members.json")
 
         for i, b in enumerate(data):
             if b['id'] == member["id"]:
