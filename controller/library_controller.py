@@ -49,8 +49,18 @@ class LibraryController:
       data = self.Storage.load_books()
       self.MenuView.show_books(data)
    
-   def borrow_book(self):
-      title = self.MenuView.ask_for_title()
+   # def borrow_book(self):
+   #    data = self.MenuView.borrow_book()
+   #    try:
+   #       member = self.Storage.search_member(data["name"])
+   #       try : 
+   #          book = self.Storage.search_book(title)
+   #          try:
+   #             book.borrow()
+   #       except: 
+   #          print("this book doesn't exist")
+   #    except:
+   #       print("you are not a member please sign up")
       
    
    def return_book(self):

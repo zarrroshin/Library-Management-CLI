@@ -50,4 +50,17 @@ class StorageManager:
         raise Exception
     
 
+    def search_member(self,name,filepath='data/members.json'):
+        with open(filepath,'r') as f :
+            data = json.load(f)
+        for obj in data: 
+            if obj["name"] == name :
+                found = True
+                return obj
+         
+        raise Exception
+    
+
+    
+
         
