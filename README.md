@@ -22,10 +22,15 @@ This project allows you to manage books and members, track borrowed books, and s
 
 
 git clone https://github.com/zarrroshin/Library-Management-System.git
+
 cd Library-Management-System
+
 2️⃣ Run the main program
+
 python main.py
+
 3️⃣ Follow the menu
+
 You can:
 
 Add or remove books
@@ -53,12 +58,6 @@ Class variables and instance variables
 
 File handling and JSON serialization
 
-🧠 Example JSON (data/id_tracker.json)
-json
-{
-  "last_book_id": 1002,
-  "last_member_id": 1005
-}
 📈 Future Improvements
 Add search functionality
 
