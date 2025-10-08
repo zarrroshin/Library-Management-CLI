@@ -52,7 +52,7 @@ Copy code
 git clone https://github.com/zarrroshin/Library-Management-System.git
 cd Library-Management-System
 2️⃣ Run the main program
-```bash
+bash```
 Copy code
 python main.py
 3️⃣ Follow the menu
